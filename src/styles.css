@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens — light default on html, dark when .dark (set by ThemeProvider) */
+html {
+  --color-paper: #f5f4f2;
+  --color-ink: #2a2a2a;
+  --color-muted: #5c5a57;
+  --color-line: #e2e0dc;
+  --color-accent: #2a2a2a;
+  --color-about-body: #3d3d3f;
+  --max-content: 42rem;
+  --max-about: 56rem;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.dark {
+  --color-paper: #111110;
+  --color-ink: #eceae6;
+  --color-muted: #9a9894;
+  --color-line: #2a2926;
+  --color-accent: #d4d2cd;
+  --color-about-body: #c9c7c4;
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-paper text-ink font-sans text-[15px] leading-relaxed;
+}
+
+/* Prose-style link: underline offset like minimal blogs */
+.link-editorial {
+  @apply text-ink underline decoration-line underline-offset-[3px] transition-colors hover:text-muted;
+}
+
+/* Dot-separated nav (Contents · About · Work) */
+.nav-dot > * + *::before {
+  content: '·';
+  @apply mx-2 text-muted select-none;
+}
+
+/* About — editorial two-column (reference: minimal serif + aside) */
+.about-editorial-prose {
+  font-family: var(--font-serif);
+  @apply text-[17px] leading-[1.65];
+  color: var(--color-about-body);
+}
+
+.about-editorial-prose a {
+  @apply text-ink underline decoration-line underline-offset-[3px] transition-colors hover:text-muted;
+}
+
+.about-editorial-aside-caption {
+  font-family: var(--font-serif);
+  @apply text-[14px] italic leading-snug text-muted;
+}
+
+.theme-toggle {
+  position: relative;
+}
+
+.theme-toggle__trigger {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--color-line);
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--color-paper) 84%, transparent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(16px);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.theme-toggle__trigger:hover {
+  transform: translateY(-1px);
+}
+
+.theme-toggle__trigger:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+.theme-toggle__glyph {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  border: 2px solid var(--color-ink);
+  background:
+    linear-gradient(135deg, transparent 0 44%, var(--color-ink) 44% 56%, transparent 56%),
+    linear-gradient(135deg, var(--color-paper) 0 50%, var(--color-ink) 50% 100%);
+}
+
+.theme-toggle__menu {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 0;
+  min-width: 18rem;
+  padding: 0.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(18px);
+  z-index: 20;
+}
+
+.theme-toggle__option {
+  flex: 1;
+  border-radius: 0.8rem;
+  padding: 0.8rem 0.95rem;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.theme-toggle__option:hover {
+  color: var(--color-ink);
+}
+
+.theme-toggle__option:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: -2px;
+}
+
+.theme-toggle__option--active {
+  background: color-mix(in srgb, var(--color-line) 72%, transparent);
+  color: var(--color-ink);
+}
+
+@media (max-width: 640px) {
+  .theme-toggle__menu {
+    min-width: 15.5rem;
+  }
+}
