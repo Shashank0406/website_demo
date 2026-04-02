@@ -18,6 +18,14 @@ export function Footer() {
           <a className="link-editorial" href={profile.github} target="_blank" rel="noreferrer">
             GitHub
           </a>
+          <a
+            className="link-editorial"
+            href="https://medium.com/@shashankkurakula5"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Medium
+          </a>
           <a className="link-editorial" href={profile.linkedin} target="_blank" rel="noreferrer">
             LinkedIn
           </a>
@@ -29,6 +37,10 @@ export function Footer() {
           © {new Date().getFullYear()} {profile.name}. Connect via{' '}
           <a className="link-editorial" href={`mailto:${profile.email}`}>
             email
+          </a>
+          ,{' '}
+          <a className="link-editorial" href="https://medium.com/@shashankkurakula5" target="_blank" rel="noreferrer">
+            Medium
           </a>
           ,{' '}
           <a className="link-editorial" href={profile.linkedin}>

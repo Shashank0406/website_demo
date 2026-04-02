@@ -94,11 +94,16 @@ export const about = {
   education: [
     {
       school: 'Texas A&M University – Commerce, Texas, USA',
-      detail: "Master's, Computer Science · GPA 3.6",
+      period: '2021 – 2022',
+      degree: "Master's, Computer Science",
+      highlight: 'GPA 3.6',
+      coursework: ['Machine Learning', 'Distributed Systems', 'Cloud Computing', 'Data Mining', 'Algorithm Design'],
     },
     {
       school: 'Jawaharlal Nehru Technological University, Hyderabad, Telangana, India',
-      detail: "Bachelor's, Computer Science",
+      period: '2015 – 2019',
+      degree: "Bachelor's, Computer Science",
+      coursework: ['Data Structures', 'Operating Systems', 'Database Systems', 'Computer Networks', 'Software Engineering'],
     },
   ],
   /** Resume “Projects & outside experience” — highlights separate from GitHub featured list */
@@ -231,7 +236,6 @@ export const moreProjects = [
   { title: 'SMS Spam Detection', href: 'https://github.com/Shashank0406/SMS_Spam_Detection' },
   { title: 'Boston House Pricing', href: 'https://github.com/Shashank0406/Boston_House_Pricing' },
   { title: 'Instagram Reach Analysis', href: 'https://github.com/Shashank0406/Instagram_Reach_Analysis' },
-  { title: 'quantization-notes', href: 'https://github.com/Shashank0406/quantization-notes' },
 ];
 
 /** Intro copy for the /work page (professional experience) */
@@ -257,7 +261,9 @@ export const blogPosts = [
 
 export const navItems = [
   { label: 'About', to: '/about' },
-  { label: 'Projects', to: '/work#featured-projects' },
+  { label: 'Education', to: '/about#education' },
+  { label: 'Skills', to: '/work#skills' },
+  { label: 'Projects', to: '/projects' },
   { label: 'Blog', to: '/blog' },
   { label: 'Work', to: '/work' },
 ];

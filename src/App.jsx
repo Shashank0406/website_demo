@@ -3,6 +3,7 @@ import { Layout } from './components/Layout.jsx';
 import HomePage from './pages/HomePage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import BlogPage from './pages/BlogPage.jsx';
+import ProjectsPage from './pages/ProjectsPage.jsx';
 import WorkPage from './pages/WorkPage.jsx';
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="blog" element={<BlogPage />} />
+          <Route path="projects" element={<ProjectsPage />} />
           <Route path="work" element={<WorkPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

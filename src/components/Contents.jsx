@@ -12,7 +12,7 @@ const cards = [
     title: 'Projects',
     body: 'GenAI apps, RAG systems, and deployed demos with source code.',
     meta: `${featuredProjects.length}+ featured builds`,
-    to: '/work#featured-projects',
+    to: '/projects',
   },
   {
     title: 'Work',
@@ -20,12 +20,18 @@ const cards = [
     meta: '4.5+ years of experience',
     to: '/work',
   },
+  {
+    title: 'Skills',
+    body: 'LLMs, RAG, LangChain, Python, AWS, Docker, Kubernetes.',
+    meta: 'Core stack',
+    to: '/work#skills',
+  },
 ];
 
 export function Contents() {
   return (
     <section id="contents" className="mx-auto max-w-content px-5 pb-20 md:px-6 md:pb-24" aria-label="Site sections">
-      <div data-reveal className="grid gap-5 md:grid-cols-3">
+      <div data-reveal className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {cards.map((card, index) => (
           <Link
             key={card.title}

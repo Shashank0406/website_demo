@@ -21,6 +21,10 @@ export function AboutSection() {
               GitHub
             </a>
             ,{' '}
+            <a href="https://medium.com/@shashankkurakula5" target="_blank" rel="noreferrer">
+              Medium
+            </a>
+            ,{' '}
             <a href={profile.linkedin} target="_blank" rel="noreferrer">
               LinkedIn
             </a>
@@ -39,39 +43,44 @@ export function AboutSection() {
         </aside>
       </div>
 
-      <div data-reveal className="mt-16 md:mt-20">
+      <div id="education" data-reveal className="mt-16 scroll-mt-28 md:mt-20">
         <h2 className="section-title text-3xl font-semibold text-ink">Education</h2>
-        <ul className="mt-6 space-y-5 text-[15px] leading-relaxed text-muted">
-          {about.education.map((edu) => (
-            <li key={edu.school} className="glass-panel rounded-[1.4rem] px-5 py-4">
-              <p className="font-medium text-ink">{edu.school}</p>
-              <p className="mt-1">{edu.detail}</p>
+        <ul className="mt-6 space-y-6 text-[15px] leading-relaxed text-muted">
+          {about.education.map((edu, index) => (
+            <li
+              key={edu.school}
+              data-reveal
+              style={{ '--reveal-delay': `${index * 70}ms` }}
+              className="glass-panel rounded-[1.8rem] px-7 py-6 md:px-8"
+            >
+              <div className="flex flex-wrap items-start justify-between gap-4">
+                <p className="text-[1.1rem] font-semibold text-ink md:text-[1.35rem]">{edu.school}</p>
+                <span className="rounded-full border border-line px-4 py-1.5 text-[13px] font-medium text-muted">
+                  {edu.period}
+                </span>
+              </div>
+              <p className="mt-5 text-[16px] text-muted">
+                {edu.degree}
+                {edu.highlight ? <span className="font-semibold text-[#63efc3]"> {' '}•{' '}{edu.highlight}</span> : null}
+              </p>
+              <div className="mt-5 border-t border-line pt-4">
+                <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-muted">Relevant Coursework</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {edu.coursework.map((course) => (
+                    <span
+                      key={course}
+                      className="rounded-lg border border-line bg-[rgba(121,148,255,0.08)] px-3 py-1.5 text-[13px] font-medium text-about-body"
+                    >
+                      {course}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </li>
           ))}
         </ul>
       </div>
 
-      <section id="resume-projects" data-reveal className="mt-16 scroll-mt-8 md:mt-20">
-        <h2 className="section-title text-3xl font-semibold text-ink">Projects & outside experience</h2>
-        <ul className="mt-8 space-y-12">
-          {about.resumeProjects.map((proj, index) => (
-            <li
-              key={proj.title}
-              data-reveal
-              style={{ '--reveal-delay': `${index * 70}ms` }}
-              className="glass-panel rounded-[1.8rem] p-6 md:p-8"
-            >
-              <p className="section-title text-[1.9rem] font-semibold text-ink">{proj.title}</p>
-              <p className="mt-1 text-[12px] font-medium uppercase tracking-wide text-muted tabular-nums">{proj.period}</p>
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-muted">
-                {proj.bullets.map((b) => (
-                  <li key={b}>{b}</li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      </section>
     </section>
   );
 }
