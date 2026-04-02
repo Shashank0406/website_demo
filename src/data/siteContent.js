@@ -93,11 +93,11 @@ export const about = {
   ],
   education: [
     {
-      school: 'Texas A&M University – Commerce',
+      school: 'Texas A&M University – Commerce, Texas, USA',
       detail: "Master's, Computer Science · GPA 3.6",
     },
     {
-      school: 'Jawaharlal Nehru Technological University',
+      school: 'Jawaharlal Nehru Technological University, Hyderabad, Telangana, India',
       detail: "Bachelor's, Computer Science",
     },
   ],
@@ -240,8 +240,24 @@ export const workPage = {
     'Roles spanning AI engineering, GenAI and MLOps, data engineering, and analytics—enterprise, healthcare, and gaming. Details below mirror my resume.',
 };
 
+export const blogPosts = [
+  {
+    tag: 'Medium',
+    title: 'Building a General-Purpose LLM Agent: Key Insights from a Step-by-Step Guide',
+    blurb: 'Notes and takeaways from designing a more capable general-purpose LLM agent.',
+    href: 'https://medium.com/@shashankkurakula5/building-a-general-purpose-llm-agent-key-insights-from-a-step-by-step-guide-4b0a84562497',
+  },
+  {
+    tag: 'Medium',
+    title: 'Building an AI-Powered Nutrition Monitor with Streamlit and Google Gemini',
+    blurb: 'A practical build log for creating a nutrition-monitoring app with Streamlit and Gemini.',
+    href: 'https://medium.com/@shashankkurakula5/building-an-ai-powered-nutrition-monitor-with-streamlit-and-google-gemini-197e2f3c4894',
+  },
+];
+
 export const navItems = [
   { label: 'About', to: '/about' },
   { label: 'Projects', to: '/work#featured-projects' },
+  { label: 'Blog', to: '/blog' },
   { label: 'Work', to: '/work' },
 ];

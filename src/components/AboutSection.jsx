@@ -13,18 +13,7 @@ export function AboutSection() {
       <div className="mt-12 grid grid-cols-1 gap-12 lg:mt-16 lg:grid-cols-[minmax(0,1fr)_minmax(240px,34%)] lg:gap-x-12 lg:gap-y-0 xl:gap-x-16">
         <div data-reveal className="glass-panel about-editorial-prose min-w-0 rounded-[2rem] p-7 space-y-8 md:p-9">
           {about.editorial.paragraphs.map((p, i) => (
-            <p key={i}>
-              {p.text}
-              {p.footnote ? (
-                <sup className="ml-0.5 align-super">
-                  <a
-                    href="#about-aside"
-                    className="text-[0.7em] font-medium text-accent no-underline hover:underline"
-                  >
-                  </a>
-                </sup>
-              ) : null}
-            </p>
+            <p key={i}>{p.text}</p>
           ))}
           <p className="pt-1">
             Find me on{' '}
@@ -41,7 +30,6 @@ export function AboutSection() {
         </div>
 
         <aside id="about-aside" data-reveal style={{ '--reveal-delay': '90ms' }} className="scroll-mt-28 lg:max-w-none">
-          <p className="mb-2 font-serif text-[13px] font-medium text-accent"></p>
           <img
             src={about.editorial.asideImage}
             alt=""
@@ -49,41 +37,6 @@ export function AboutSection() {
           />
           <p className="about-editorial-aside-caption mt-3">{about.editorial.asideCaption}</p>
         </aside>
-      </div>
-
-      <div data-reveal className="mt-20 border-t border-line pt-16 md:mt-24 md:pt-20">
-        <h2 className="section-title text-3xl font-semibold text-ink">Professional summary</h2>
-        <div className="mt-6 space-y-3 text-[15px] leading-relaxed text-muted">
-          {about.summary.map((para, i) => (
-            <p key={i}>{para}</p>
-          ))}
-        </div>
-      </div>
-
-      <div data-reveal className="mt-16 md:mt-20">
-        <h2 className="section-title text-3xl font-semibold text-ink">Experience</h2>
-        <ul className="mt-8 space-y-12">
-          {about.experience.map((job, index) => (
-            <li
-              key={`${job.company}-${job.period}`}
-              data-reveal
-              style={{ '--reveal-delay': `${index * 70}ms` }}
-              className="glass-panel rounded-[1.8rem] p-6 md:p-8"
-            >
-              <p className="text-[12px] font-medium uppercase tracking-wide text-muted tabular-nums">{job.period}</p>
-              <p className="section-title mt-2 text-[1.9rem] font-semibold text-ink">{job.role}</p>
-              <p className="mt-1 text-[14px] text-muted">
-                {job.company}
-                {job.location ? ` · ${job.location}` : ''}
-              </p>
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-muted">
-                {job.bullets.map((b) => (
-                  <li key={b}>{b}</li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
       </div>
 
       <div data-reveal className="mt-16 md:mt-20">
@@ -119,17 +72,6 @@ export function AboutSection() {
           ))}
         </ul>
       </section>
-
-      <div data-reveal className="mt-16 md:mt-20">
-        <h2 className="section-title text-3xl font-semibold text-ink">Skills</h2>
-        <ul className="mt-6 space-y-3 text-[15px] leading-relaxed text-muted">
-          {about.skillCategories.map((cat) => (
-            <li key={cat.label} className="glass-panel rounded-[1.4rem] px-5 py-4">
-              <span className="font-medium text-ink">{cat.label}:</span> {cat.items}
-            </li>
-          ))}
-        </ul>
-      </div>
     </section>
   );
 }
