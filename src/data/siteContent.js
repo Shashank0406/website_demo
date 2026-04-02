@@ -5,8 +5,9 @@ export const profile = {
   name: 'Shashank Kurakula',
   handle: 'Shashank0406',
   title: 'AI Engineer',
-  org: 'Cognitive Technology Solutions Inc',
+  org: 'CVS Health',
   location: 'New Jersey, USA',
+  current_location: "Hyderabad, India",
   email: 'shashankkurak@gmail.com',
   github: 'https://github.com/Shashank0406',
   linkedin: 'https://www.linkedin.com/in/shashank-kurakula0408',
@@ -18,7 +19,7 @@ export const about = {
     paragraphs: [
       {
         text:
-          'At the moment I work as an AI Engineer at Cognitive Technology Solutions Inc—building GenAI pipelines, RAG systems, and production ML for enterprise use.',
+          'I worked as an AI Engineer at CVS Health—building GenAI pipelines, RAG systems, and production ML for enterprise use.',
         footnote: 1,
       },
       {
@@ -26,7 +27,7 @@ export const about = {
           'I like problems at the intersection of machine learning, software systems, algorithms, and reliable deployment—especially in healthcare and regulated environments.',
       },
       {
-        text: 'Outside of work: open-source experiments, Streamlit demos, and continuous learning.',
+        text: 'Outside of work: Gym, Badminton, swimming, Gaming, open-source experiments, design...',
       },
     ],
     asideImage: '/about-editorial.png',
@@ -37,7 +38,7 @@ export const about = {
   ],
   experience: [
     {
-      company: 'Cognitive Technology Solutions Inc',
+      company: 'CVS Health',
       role: 'AI Engineer – GenAI & ML Model Development',
       location: 'New Jersey, USA',
       period: 'Nov 2024 – Dec 2025',
@@ -240,7 +241,7 @@ export const workPage = {
 };
 
 export const navItems = [
-  { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
+  { label: 'Projects', to: '/work#featured-projects' },
   { label: 'Work', to: '/work' },
 ];
