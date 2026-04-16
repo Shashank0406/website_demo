@@ -55,7 +55,7 @@ export const about = {
       company: 'Blue Cross & Blue Shield of Mississippi',
       role: 'AI/ML Engineer – Predictive Analytics & MLOps',
       location: 'United States',
-      period: 'Nov 2023 – Oct 2024',
+      period: 'Jan 2023 – Oct 2024',
       bullets: [
         'Built ML models (classification, regression, clustering) using Scikit-learn, XGBoost, and LightGBM for predictive analytics in risk management, operational efficiency, and customer experience.',
         'Implemented RAG and LangChain orchestration pipelines for predictive intelligence use cases across enterprise data.',
